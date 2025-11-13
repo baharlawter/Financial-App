@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { Calculator } from './Calculator/calculator';
+import { CalculatorComponent } from './Calculator/calculator.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'calculator', component: Calculator },
+  { path: 'calculator', component: CalculatorComponent },
 ];

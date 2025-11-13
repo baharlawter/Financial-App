@@ -1,0 +1,34 @@
+<div class="calculator">
+  <h2>Financial Calculator</h2>
+
+  <form>
+    <label>
+      <h3>Gross Monthy Income</h3>
+      <input type="number" name="income" [(ngModel)]="monthlyIncome" placeholder="$ 00.00" />
+    </label>
+    <label>
+      <h3>Monthly Rent/Mortgage</h3>
+      <input type="number" name="mortgage/rent" [(ngModel)]="monthlyRent" placeholder="$ 00.00" />
+    </label>
+    <label>
+      <h3>Car Payment</h3>
+      <input type="number" name="car" [(ngModel)]="carPayment" placeholder=" $ 00.00" />
+    </label>
+    <label>
+      <h3>Monthly Credit Card Payment</h3>
+      <input
+        type="number"
+        name="creditCardPayment"
+        [(ngModel)]="creditCardPayment"
+        placeholder="$ 00.00"
+      />
+    </label>
+    <label>
+      <h3>Other Payments</h3>
+      <input type="number" name="other" [(ngModel)]="otherPayments" placeholder=" $ 00.00" />
+    </label>
+    <div>
+      <button onclick="calculateDebtToIncomeRatio()">Submit</button>
+    </div>
+  </form>
+</div>
