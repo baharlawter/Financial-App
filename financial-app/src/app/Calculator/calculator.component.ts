@@ -10,43 +10,32 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
-  // model bound to form inputs
   monthlyIncome = 0;
   monthlyRent = 0;
   carPayment = 0;
   creditCardPayment = 0;
   otherPayments = 0;
 
-  // signal to hold the result and optional message
   dti = signal<number | null>(null);
   message = signal<string>('');
 
-  // calculate and store result
   calculateDebtToIncomeRatio(): void {
+    const income = Number(this.monthlyIncome) || 0;
     const totalDebts =
       Number(this.monthlyRent) +
       Number(this.carPayment) +
       Number(this.creditCardPayment) +
       Number(this.otherPayments);
 
-    if (!this.monthlyIncome || this.monthlyIncome <= 0) {
+    if (income <= 0) {
       this.dti.set(null);
-      this.message.set('Please enter a valid gross monthly income greater than 0.');
+      this.message.set('Please enter monthly income greater than 0');
       return;
     }
-    if (totalDebts < 0) {
-      this.dti.set(null);
-      this.message.set('Debt cannot be negative');
-    }
 
-    const ratio = (totalDebts / Number(this.monthlyIncome)) * 100;
-    const rounded = Math.round(ratio * 100) / 100; // two decimals
-    this.dti.set(rounded);
-    this.message.set(
-      rounded <= 36
-        ? 'DTI looks healthy (common recommended threshold is <= 36%).'
-        : 'DTI is high — consider reducing debts or increasing income.'
-    );
+    const ratio = (totalDebts / income) * 100;
+    this.dti.set(Number(ratio.toFixed(2)));
+    this.message.set('Calculated successfully');
   }
 
   clear(): void {

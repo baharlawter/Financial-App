@@ -1,34 +1,76 @@
 <div class="calculator">
   <h2>Financial Calculator</h2>
 
-  <form>
+  <form (ngSubmit)="calculateDebtToIncomeRatio()">
     <label>
-      <h3>Gross Monthy Income</h3>
-      <input type="number" name="income" [(ngModel)]="monthlyIncome" placeholder="$ 00.00" />
+      <h3>Gross Monthly Income</h3>
+      <input
+        type="number"
+        [(ngModel)]="monthlyIncome"
+        name="income"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
+      />
     </label>
+
     <label>
       <h3>Monthly Rent/Mortgage</h3>
-      <input type="number" name="mortgage/rent" [(ngModel)]="monthlyRent" placeholder="$ 00.00" />
+      <input
+        type="number"
+        [(ngModel)]="monthlyRent"
+        name="rent"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
+      />
     </label>
+
     <label>
       <h3>Car Payment</h3>
-      <input type="number" name="car" [(ngModel)]="carPayment" placeholder=" $ 00.00" />
+      <input
+        type="number"
+        [(ngModel)]="carPayment"
+        name="car"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
+      />
     </label>
+
     <label>
       <h3>Monthly Credit Card Payment</h3>
       <input
         type="number"
-        name="creditCardPayment"
         [(ngModel)]="creditCardPayment"
-        placeholder="$ 00.00"
+        name="creditCard"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
       />
     </label>
+
     <label>
       <h3>Other Payments</h3>
-      <input type="number" name="other" [(ngModel)]="otherPayments" placeholder=" $ 00.00" />
+      <input
+        type="number"
+        [(ngModel)]="otherPayments"
+        name="other"
+        min="0"
+        step="0.01"
+        placeholder="0.00"
+      />
     </label>
-    <div>
-      <button onclick="calculateDebtToIncomeRatio()">Submit</button>
+
+    <div class="actions">
+      <button (click)="calculateDebtToIncomeRatio()" type="submit">Calculate</button>
     </div>
   </form>
+
+  <hr />
+
+  <div class="result">
+    <div *ngIf="message()">{{ message() }}</div>
+    <div *ngIf="dti() !== null"><strong>Your Debt to Income ratio is:</strong> {{ dti() }}%</div>
+  </div>
 </div>
