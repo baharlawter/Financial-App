@@ -10,5 +10,5 @@ import { CalculatorComponent } from './calculator/calculator.component';
   styleUrl: './app.scss',
 })
 export class AppComponent {
-  title = signal('financial-app');
+  title = signal('To My Financial-App');
 }
