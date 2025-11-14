@@ -9,6 +9,6 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'calculator', component: CalculatorComponent },
   { path: 'blog1', component: Blog1 },
-  { path: 'blog1', component: Blog2 },
+  { path: 'blog2', component: Blog2 },
   { path: 'blog3', component: Blog3 },
 ];
