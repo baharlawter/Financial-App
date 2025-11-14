@@ -2,12 +2,12 @@ import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-index',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './home.html',
-  styleUrl: './home.scss',
+  templateUrl: './index.html',
+  styleUrl: './index.scss',
 })
-export class HomeComponent {
+export class IndexComponent {
   title = signal('financial-app');
 }
