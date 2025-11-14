@@ -10,13 +10,22 @@ import { CommonModule } from '@angular/common';
 export class Shop {
   books = [
     {
-      title: 'The Total Money Makeover Updated and Expanded: A Proven Plan for Financial Peace',
+      title: 'The Total Money Makeover ',
       image: 'https://m.media-amazon.com/images/I/81RvIwENAbL._SY522_.jpg',
       price: '$24.20',
     },
     {
-      title:
-        'Rich Dad Poor Dad: What the Rich Teach Their Kids About Money That the Poor and Middle Class Do',
+      title: 'Rich Dad Poor Dad',
+      image: 'https://m.media-amazon.com/images/I/81BE7eeKzAL._SY522_.jpg',
+      price: '$7.34',
+    },
+    {
+      title: 'Rich Dad Poor Dad',
+      image: 'https://m.media-amazon.com/images/I/81BE7eeKzAL._SY522_.jpg',
+      price: '$7.34',
+    },
+    {
+      title: 'Rich Dad Poor Dad',
       image: 'https://m.media-amazon.com/images/I/81BE7eeKzAL._SY522_.jpg',
       price: '$7.34',
     },
