@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/": {},
+    "/blog/news": {},
+    "/blog/tips": {},
+    "/blog/welcome": {},
+    "/calculator": {},
+    "/shop": {}
+  }
+}
