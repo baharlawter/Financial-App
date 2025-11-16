@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { CalculatorComponent } from './calculator/calculator.component';
+import { CalculatorComponent } from './Calculator/calculator.component';
 import { IndexComponent } from './index/index';
 import { Blog } from './blog/blog';
 import { Shop } from './shop/shop/shop';
