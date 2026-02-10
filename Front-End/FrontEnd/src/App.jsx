@@ -8,7 +8,9 @@ import SearchBar from "./SearchBar/SearchBar";
 function App() {
   return (
     <>
-      <Header />
+      <div className="header-container">
+        <Header />
+      </div>
 
       <Routes>
         <Route path="/" element={<Home />} />
